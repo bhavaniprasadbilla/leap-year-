@@ -1,0 +1,21 @@
+startYear = input("Enter starting date (dd-mm-yyyy): ")
+endYear = input("Enter ending date (dd-mm-yyyy): ")
+​
+splstartYear = startYear.split("-")
+splendYear = endYear.split("-")
+​
+if int(splstartYear[0]) > 30 or int(splendYear[0]) > 30 or int(splstartYear[0]) < 1 or int(splendYear[0]) < 1 :
+    print("Invalid input !!")
+​
+elif int(splstartYear[1]) > 12 or int(splendYear[1]) > 12 or int(splstartYear[1]) < 1 or int(splendYear[1]) < 1 :
+    print("Invalid input !!")
+​
+elif int(splstartYear[2]) < 1 or int(splendYear[2]) < 1 or int(splendYear[2]) < int(splstartYear[2]) :
+    print("Invalid input !!")
+​
+else :
+    print ("List of leap years between",startYear,"and",endYear)
+    for year in range(int(splstartYear[2]), int(splendYear[2])):
+    #check if the year is a Leap year if yes print
+        if (0 == year % 4) and (0 != year % 100) or (0 == year % 400):
+            print (year)
